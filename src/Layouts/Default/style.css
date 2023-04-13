@@ -48,7 +48,11 @@ nav ul {
   gap: 2rem;
 }
 
-nav ul li {
+nav ul a {
+  color: var(--WHITE);
+}
+
+nav ul a li {
   padding: 1rem 4rem;
 
   cursor: pointer;
@@ -57,23 +61,22 @@ nav ul li {
   transition: 0.2s;
 }
 
-nav ul a {
-  color: var(--WHITE);
-}
-
-nav ul li.active {
+nav ul a li.active {
   font-weight: 500;
   color: var(--BLUE);
 
   border-bottom: 0.2rem solid var(--BLUE);
 }
 
-nav ul li:hover {
+nav ul a li:hover {
   color: var(--BLUE);
 }
 
 main {
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 3.2rem;
 
   max-width: 80rem;
@@ -93,5 +96,11 @@ footer {
   nav ul {
     flex-direction: row;
     justify-content: center;
+  }
+}
+
+@media (min-width: 800px) {
+  main {
+    flex-direction: row;
   }
 }

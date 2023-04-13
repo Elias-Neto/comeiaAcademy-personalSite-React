@@ -6,7 +6,7 @@ import Section from "../../components/Section"
 
 export default function About() {
   return (
-    <DefaultLayout>
+    <DefaultLayout currentPage="about">
       <Section title="Opa, me chamo Elias! &#128075;" className="flex">
         <div className="description flex">
           <p>
@@ -55,7 +55,7 @@ export default function About() {
         </div>
       </Section>
       <Section title="EDUCAÇÃO" className="education flex">
-        <ul class="flex">
+        <ul className="flex">
           <li>
             &#128204; Algoritmos e Lógica de Programação (Curso em Vídeo);
           </li>

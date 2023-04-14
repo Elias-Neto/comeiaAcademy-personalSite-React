@@ -18,13 +18,13 @@ export default function ProjectItem({
 
         <div className="buttons flex">
           <button>
-            <a href={githubHref} className="flex">
+            <a href={githubHref} className="flex" target="_blank">
               <img src={githubIcon} alt="Logo do Github" />
               Github
             </a>
           </button>
           <button>
-            <a href={deployHref} className="flex">
+            <a href={deployHref} className="flex" target="_blank">
               <img src={clickIcon} alt="Ícone de uma seta do mouse clicando" />
               Deploy
             </a>

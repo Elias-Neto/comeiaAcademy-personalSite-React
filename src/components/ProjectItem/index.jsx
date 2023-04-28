@@ -4,6 +4,7 @@ import "./style.css"
 
 export default function ProjectItem({
   title,
+  description,
   imgSrc,
   githubHref,
   deployHref,
@@ -11,10 +12,19 @@ export default function ProjectItem({
 }) {
   return (
     <div className="card flex" {...rest}>
-      <h3>{title}</h3>
+      <div className="textWrapper">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
 
       <div className="wrapper flex">
-        <img src={imgSrc} alt="Demonstração do projeto" />
+        <iframe
+          title="YouTube Video"
+          src={imgSrc}
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
 
         <div className="buttons flex">
           <button>

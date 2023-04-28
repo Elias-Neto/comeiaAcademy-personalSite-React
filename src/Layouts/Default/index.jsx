@@ -3,16 +3,32 @@ import NavigationItem from "../../components/NavigationItem"
 import "./style.css"
 import avatar from "../../assets/profile-pic.png"
 
+import useInformation from "../../hooks/useInformation"
+
 export default function Default({ currentPage, children }) {
+  const { information, error, isLoading } = useInformation()
+
+  if (isLoading) {
+    return <p>Carregando...</p>
+  }
+
+  if (error) {
+    return <p>Ocorreu um erro ao buscar as informações.</p>
+  }
+
+  if (!information) {
+    return null
+  }
+
   return (
     <>
       <header className="flex">
         <div className="profile-wrapper flex">
-          <img src={avatar} alt="Foto de Elias Neto" />
+          <img src={information.profilePic} alt="Foto de Elias Neto" />
           <div className="text-wrapper flex">
-            <h1>Elias Neto</h1>
+            <h1>{information.name}</h1>
             <p>
-              <em>Desenvolvedor de Software</em>
+              <em>{information.office}</em>
             </p>
           </div>
         </div>
@@ -41,7 +57,7 @@ export default function Default({ currentPage, children }) {
       <main className="flex">{children}</main>
 
       <footer>
-        Developed with &#10084; by <u>Elias Neto</u>.
+        Developed with ❤ by <u>{information.name}</u>.
       </footer>
     </>
   )

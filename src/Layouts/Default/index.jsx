@@ -1,7 +1,8 @@
-import NavigationItem from "../../components/NavigationItem"
+import { BsGithub, BsLinkedin } from "react-icons/bs"
 
 import "./style.css"
-import avatar from "../../assets/profile-pic.png"
+
+import NavigationItem from "../../components/NavigationItem"
 
 import useInformation from "../../hooks/useInformation"
 
@@ -31,6 +32,14 @@ export default function Default({ currentPage, children }) {
               <em>{information.office}</em>
             </p>
           </div>
+          <ul>
+            <li>
+              <a href="https://github.com/Elias-Neto" target="_blank"><BsGithub /></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/elias-neto321/" target="_blank"><BsLinkedin /></a>
+            </li>
+          </ul>
         </div>
 
         <nav>
@@ -57,7 +66,8 @@ export default function Default({ currentPage, children }) {
       <main className="flex">{children}</main>
 
       <footer>
-        Developed with ❤ by <u>{information.name}</u>.
+        <span>Developed with ❤ by <u>{information.name}</u>.</span>
+
       </footer>
     </>
   )

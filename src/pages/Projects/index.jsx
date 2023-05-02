@@ -2,9 +2,6 @@ import DefaultLayout from "../../Layouts/Default"
 import ProjectItem from "../../components/ProjectItem"
 
 import "./style.css"
-import projects from "./projects.json"
-import img1 from "../../assets/find-a-friend.gif"
-import img2 from "../../assets/rocketnotes.gif"
 
 import usePortfolio from "../../hooks/usePortfolio"
 
@@ -22,8 +19,6 @@ export default function Projects() {
   if (!portfolio) {
     return null
   }
-
-  const images = [img1, img2]
 
   return (
     <DefaultLayout currentPage="projects">

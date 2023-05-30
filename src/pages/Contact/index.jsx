@@ -22,7 +22,7 @@ export default function Contact() {
   function sendForWhatsApp() {
     const text = `Nome: ${name}\nE-mail: ${email}\nTelefone: ${phone}\nMensagem: ${message}`
     const hashedText = encodeURIComponent(text)
-    const whatsappNumber = import.meta.env.VITE_W
+    const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER
     const url = `https://wa.me/${whatsappNumber}?text=${hashedText}`
 
     window.open(url, "_blank")
